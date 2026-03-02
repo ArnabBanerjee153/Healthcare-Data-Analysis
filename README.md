@@ -1,48 +1,119 @@
-Objective
-The aim of this project is to analyze healthcare data to extract actionable insights that could help improve patient care and healthcare resource management. By working with multiple datasets, I utilized various Excel techniques to clean, transform, and analyze the data to uncover meaningful patterns.
+❤️ Heart Disease Prediction & Healthcare Data Analysis
+📌 Project Objective
 
-Project Overview
-This project focuses on analyzing healthcare data, such as patient health profiles, medical histories, and healthcare costs. The insights gained from this analysis are intended to assist healthcare stakeholders in making informed decisions regarding patient care and resource allocation.
+      The objective of this project is to analyze healthcare data and build a machine learning model to predict the presence of heart disease. The project focuses on data preprocessing, visualization, correlation analysis, and classification using Logistic Regression.
 
-Key Features:
-Data Sources: 3 healthcare datasets
-Tools Used: Microsoft Excel
-Focus Areas: Data cleaning, transformation, and visual analysis
-Data Cleaning and Transformation
-Basic Data Cleaning: Learned and applied techniques such as using mean, median, and mode to clean the data.
-Patient Segmentation:
-BMI (Body Mass Index): Segregated patients as Underweight, Healthy, Overweight, and Obese.
-Blood Sugar Levels: Classified patients as Normal, Pre-Diabetic, and Diabetic.
-Data Analysis
-Smoking and Cancer Risk:
+📊 Dataset Used
 
-Insight: Using a Donut Chart, I found that non-smokers have a higher cancer history compared to smokers, indicating that smoking might not be the only factor contributing to cancer risk.
-Obesity & Cancer Correlation: Through further analysis, I observed that obese and overweight patients were more prone to cancer than those with a normal weight.
-Research Findings: Web research showed that being overweight can lead to insulin resistance, increasing the risk of colon cancer.
-Blood Sugar and Surgeries:
+    Dataset: heart.csv
+    
+    Contains patient medical attributes such as:
+    
+    Age
+    
+    Sex
+    
+    Chest Pain Type (cp)
+    
+    Cholesterol (chol)
+    
+    Blood Pressure
+    
+    Maximum Heart Rate
+    
+    Target (1 = Heart Disease, 0 = No Disease)
+    
+    🛠 Technologies & Libraries Used
+    
+    Python
+    
+    Pandas
+    
+    NumPy
+    
+    Matplotlib
+    
+    Seaborn
+    
+    Scikit-learn
 
-Diabetes Analysis: Investigated the blood sugar levels of obese and overweight patients and found that most were either diabetic or pre-diabetic.
-Surgeries & Blood Sugar: Using another Donut Chart, I found that patients with uncontrolled blood sugar levels underwent more than two surgeries.
-Hospital Charges:
+🧹 Data Preprocessing
 
-Obesity & Costs: Obese patients were found to incur higher hospital charges compared to others, even if their blood sugar levels were normal.
-Valuable Insight: Maintaining a healthy weight through exercise and diet is critical to preventing diseases such as cancer and reducing healthcare costs.
-Hospital Charge Trends:
+    The following preprocessing steps were performed:
+    
+    Checked data types and null values (info(), isnull())
+    
+    Generated summary statistics (describe())
+    
+    Filled missing values using mean imputation
+    
+    Applied One-Hot Encoding (get_dummies)
+    
+    Feature Scaling using StandardScaler
+    
+    Split dataset into training and testing sets (80/20 split)
 
-Tier 2 Hospitals: A Column Chart revealed that Tier 2 hospitals had the highest hospital charges. This may be due to the developing nature of these cities, which may lack proper sanitation and awareness about physical health.
-Charges by Age: With the help of a Line Chart, I observed that hospital charges increase with age, but after 60, these charges rise dramatically due to age-related factors.
-Age, BMI, and Blood Sugar Trends:
+📈 Exploratory Data Analysis (EDA)
+    🔹 Target Distribution
+    
+    A count plot was used to visualize the distribution of heart disease cases (1 = Yes, 0 = No).
+    
+    🔹 Correlation Heatmap
+    
+    A heatmap was generated to analyze relationships between features and identify strong predictors of heart disease.
+    
+    🔹 Age vs Heart Disease
+    
+    A boxplot showed that heart disease is more common in higher age groups.
+    
+    🔹 Chest Pain Type vs Target
+    
+    A count plot revealed that certain chest pain types are more associated with heart disease.
+    
+    🔹 Cholesterol Analysis
+    
+    Average cholesterol levels were compared between patients with and without heart disease using groupby analysis.
 
-As age increases, both blood sugar and BMI levels rise.
-Beyond 60 years old, blood sugar levels increase sharply, while BMI levels decrease.
-Young Patients (25-35): A surprising observation was the presence of obesity among younger patients, as indicated by peaks in the BMI trend.
-Conclusion
-This analysis highlights the importance of maintaining a healthy weight and blood sugar levels to prevent cancer and reduce healthcare costs. Additionally, Tier 2 cities should focus on improving healthcare infrastructure and awareness to minimize hospital charges.
+🤖 Machine Learning Model
+      Model Used:
+      
+      Logistic Regression
+      
+      Steps:
+      
+      Data split using train_test_split
+      
+      Model training using LogisticRegression
+      
+      Predictions made on test data
 
-Key Excel Functions & Techniques Used:
-Data Cleaning: Mean, Median, Mode functions.
-Data Segmentation: Conditional formatting and formulas to categorize BMI and blood sugar levels.
-Charts:
-Donut Chart: Used to compare smokers vs. non-smokers and their health histories.
-Column Chart: Displayed hospital charges in different regions.
-Line Chart: Showed trends in hospital charges by age.
+📊 Model Evaluation
+
+    The model was evaluated using:
+    
+    Accuracy Score
+    
+    Classification Report (Precision, Recall, F1-Score)
+    
+    Confusion Matrix (visualized using heatmap)
+    
+    These metrics help measure the performance of the classification model in predicting heart disease.
+
+📁 Output
+
+    Cleaned dataset exported as:
+    cleaned_healthcare.csv
+
+📌 Key Insights
+
+    Age is positively correlated with heart disease risk.
+    
+    Certain chest pain types strongly indicate heart disease.
+    
+    Cholesterol levels vary between diseased and non-diseased patients.
+    
+    Logistic Regression can effectively classify heart disease presence with good accuracy.
+
+🚀 Conclusion
+
+    This project demonstrates how healthcare data can be cleaned, analyzed, and used to build a predictive machine learning model. Early prediction of heart disease can assist healthcare professionals in preventive treatment and better decision-making.
